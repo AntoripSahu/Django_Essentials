@@ -1,14 +1,14 @@
-<html>
+{% extends "base.html" %}
+
     <header>
         <title>
             SmartNotes!
         </title>
     </header>
 
-    <body>
+{% block content %} 
         <h1>
             Welcome to SmartNotes!
         </h1>
-        <p> Today is {{today}} </p>
-    </body>
-</html>
+        <p class = "note-p"> Today is {{today}} </p>
+{% endblock %}

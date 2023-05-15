@@ -14,8 +14,12 @@ class NotesListView(ListView):
 #     return render(request, 'notes/notes_list.html', {'notes' : all_notes})
 
 class NotesDetailView(DetailView):
-    model = Notes
-    context_object_name = "note"
+    try: 
+        model = Notes
+        context_object_name = "note"
+        template_name = "notes/notes_detail.html"
+    except Notes.DoesNotExist:
+        template_name = request, 'notes/notes_error.html'
 
 # def detail(request, pk):
 #     try: 
